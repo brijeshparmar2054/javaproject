@@ -1,0 +1,43 @@
+package com.brijesh.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.brijesh.model.Customer;
+import com.brijesh.model.Employee;
+import com.brijesh.repository.CustomerRepository;
+import com.brijesh.repository.EmployeeRepository;
+
+@Service
+public class CustomerService 
+{
+	@Autowired
+	private CustomerRepository customerRepository;
+	
+	@Autowired
+	private EmployeeRepository employeeRepository;
+	
+	public void save(Customer customer)
+	{
+		customerRepository.save(customer);
+	}
+	
+	public Customer findById(Long id)
+	{
+		return customerRepository.findById(id).get();
+	}
+	
+	public List<Customer> findAll()
+	{
+		return customerRepository.findAll();
+	}
+	
+	public Customer addCustomerToEmployee(Long employeeId, Customer customer) {
+        Employee employee = employeeRepository.findById(employeeId)
+            .orElseThrow(() -> new RuntimeException("Employee not found"));
+        customer.setEmployee(employee);
+        return customerRepository.save(customer);
+    }
+}

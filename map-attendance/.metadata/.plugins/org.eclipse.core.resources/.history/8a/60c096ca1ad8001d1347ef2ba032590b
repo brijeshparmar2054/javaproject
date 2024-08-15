@@ -1,0 +1,15 @@
+package com.briju.login;
+
+import java.awt.Font;
+
+import javax.swing.JFrame;
+
+public class Login 
+{
+	public void loginView()
+	{
+		JFrame frame = new JFrame();
+		Font font = new Font("Times New Roman", Font.PLAIN, 20);
+		
+	}
+}

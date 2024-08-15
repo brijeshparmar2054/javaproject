@@ -1,0 +1,11 @@
+package com.brijesh.controller;
+
+import org.springframework.stereotype.Controller;
+
+import com.brijesh.service.CustomerService;
+
+@Controller
+public class CustomerController 
+{
+	private CustomerService customerService;
+}

@@ -1,0 +1,31 @@
+package com.brijesh.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.brijesh.model.MyCustomer;
+import com.brijesh.repository.MyCustomerRepository;
+
+@Service
+public class MyCustomerService 
+{
+	@Autowired
+	private MyCustomerRepository myCustomerRepository;
+	
+	public void save(MyCustomer mycustomer)
+	{
+		myCustomerRepository.save(mycustomer);
+	}
+	
+	public List<MyCustomer> findAll()
+	{
+		return myCustomerRepository.findAll();
+	}
+	
+	public MyCustomer findById(Long id)
+	{
+		return 
+	}
+}

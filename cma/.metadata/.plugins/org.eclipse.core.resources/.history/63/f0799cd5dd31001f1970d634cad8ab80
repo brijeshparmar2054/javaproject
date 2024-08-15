@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" th:href="@{../css/style.css}" type="text/css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav>
+		<div class="logo">Admin Dashboard</div>
+		<ul class="nav-links">
+			<li><a th:href="@{/}">Home</a></li>
+			<li><a th:href="@{/admin/viewcustomer}">View Customers</a></li>
+			<li><a th:href="@{/admin/addemployee}">Add New Employee</a></li>
+			<li><a th:href="@{/}">Logout</a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<!-- Content -->
+	<div class="container" id="dashboard">
+    	<h1>Customer List</h1>
+    	<table>
+    		<thead>
+    			<tr>
+	    			<td>Id</td>
+	    			<td>Name</td>
+	    			<td>Email ID</td>
+	    			<td>Phone Number</td>
+	    			<td>Inquiry</td>
+	    			<td>Emlpoyee</td>
+	    		</tr>
+    		</thead>
+    		<tbody>
+    			<tr th:each="cl:${customerlist}">
+    				<td th:text="${cl.id}"></td>
+    				<td th:text="${cl.name}"></td>
+    				<td th:text="${cl.email}"></td>
+    				<td th:text="${cl.phone}"></td>
+    				<td th:text="${cl.inquiry}"></td>
+    				<!-- <td th:text="${cl.employee.name}"></td> -->
+    				<td>
+    					<span></span>
+    				</td>
+    			</tr>
+    		</tbody>
+    		
+    	</table>
+    </div>
+</body>
+</html>

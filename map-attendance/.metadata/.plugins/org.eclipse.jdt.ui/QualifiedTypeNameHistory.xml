@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="javax.security.auth.login.LoginContext"/>
+    <fullyQualifiedTypeName name="javax.swing.JFrame"/>
+    <fullyQualifiedTypeName name="java.awt.Font"/>
+    <fullyQualifiedTypeName name="com.briju.home.Home"/>
+    <fullyQualifiedTypeName name="com.briju.teacher.TeacherView"/>
+    <fullyQualifiedTypeName name="com.briju.student.StudentView"/>
+    <fullyQualifiedTypeName name="com.briju.admin.Admin"/>
+    <fullyQualifiedTypeName name="com.briju.student.Students"/>
+    <fullyQualifiedTypeName name="com.briju.attendance.AddAttendance"/>
+    <fullyQualifiedTypeName name="com.briju.attendance.EditAttendance"/>
+    <fullyQualifiedTypeName name="com.briju.teacher.Teachers"/>
+    <fullyQualifiedTypeName name="com.briju.myclass.Class"/>
+    <fullyQualifiedTypeName name="com.briju.login.Login"/>
+</qualifiedTypeNameHistroy>

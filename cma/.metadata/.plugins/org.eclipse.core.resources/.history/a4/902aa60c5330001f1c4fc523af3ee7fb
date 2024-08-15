@@ -1,0 +1,11 @@
+package com.brijesh.service;
+
+import org.springframework.stereotype.Service;
+
+import com.brijesh.repository.MyCustomerRepository;
+
+@Service
+public class MyCustomerService 
+{
+	private MyCustomerRepository myCustomerRepository;
+}

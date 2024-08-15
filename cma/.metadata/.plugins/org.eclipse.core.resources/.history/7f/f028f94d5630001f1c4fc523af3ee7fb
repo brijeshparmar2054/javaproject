@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav>
+		<div class="logo">Admin Dashboard</div>
+		<ul class="nav-links">
+			<li><a th:href="@{/}">Home</a></li>
+			<li><a th:href="@{/dashboard}">View Employees</a></li>
+			<li><a th:href="@{/}">Logout</a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+
+	<div class="container" id="dashboard">
+    	<h1>Add New Employee</h1>
+        <form action="#" th:action="@{addemployee}" method="post" id="form">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit">Add Employee</button>
+        </form>
+    </div>
+</body>
+</html>

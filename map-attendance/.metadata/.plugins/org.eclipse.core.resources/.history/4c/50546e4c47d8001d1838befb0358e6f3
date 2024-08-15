@@ -1,0 +1,13 @@
+package com.briju.app;
+
+import java.sql.SQLException;
+
+import com.briju.login.Login;
+
+public class Main {
+
+	public static void main(String[] args) throws SQLException {
+		Login login = new Login();
+		login.loginView();
+	}
+}

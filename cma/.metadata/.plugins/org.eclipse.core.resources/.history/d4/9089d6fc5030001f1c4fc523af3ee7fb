@@ -1,0 +1,5 @@
+package com.brijesh.repository;
+
+public interface EmployeeRepository {
+
+}

@@ -1,0 +1,9 @@
+package com.brijesh.model;
+
+
+public class MyCustomer 
+{
+	private Long id;
+	private Employee employee;
+	private Customer customer;
+}

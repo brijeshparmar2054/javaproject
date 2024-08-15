@@ -1,0 +1,26 @@
+package com.brijesh.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class IndexController 
+{
+	@RequestMapping("/customer/form")
+	public String form()
+	{
+		return "customer/form";
+	}
+	
+	@RequestMapping("/customer/form")
+	public String form()
+	{
+		return "customer/form";
+	}
+	
+	@RequestMapping("/customer/form")
+	public String form()
+	{
+		return "customer/form";
+	}
+}

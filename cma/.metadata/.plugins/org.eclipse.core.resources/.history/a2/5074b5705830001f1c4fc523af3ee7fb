@@ -1,0 +1,77 @@
+package com.brijesh.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
+
+import com.brijesh.model.Employee;
+import com.brijesh.service.EmployeeService;
+
+@Controller
+@RequestMapping("/admin")
+public class AdminController 
+{
+	@Autowired
+	private EmployeeService employeeService;
+	
+	@PostMapping("/login")
+	public ModelAndView loginProcess(@RequestParam String username, @RequestParam String password)
+	{
+		if(username.equalsIgnoreCase("admin") && password.equalsIgnoreCase("admin"))
+		{
+			return new ModelAndView("admin/dashboard");
+		}
+		else
+		{
+			return new ModelAndView("errorPage");
+		}
+	}
+	
+	@RequestMapping("/dashboard")
+	public ModelAndView dashboard()
+	{
+		List<Employee> list = employeeService.findAll();
+		
+		return new ModelAndView("admin/dashboard", "employeelist", list);
+	}
+	
+	@RequestMapping("/addemployee")
+	public String addEmployee()
+	{
+		return "admin/addemployee";
+	}
+	
+	@PostMapping("/save")
+	public String addEmployee(@ModelAttribute Employee employee)
+	{
+		String hasedPassword = BCrypt.hashpw(employee.getPassword(), BCrypt.gensalt(12));
+		employee.setPassword(hasedPassword);
+		
+		employeeService.save(employee);
+		
+		return "redirect:/admin/dashboard";
+	}
+	
+	@GetMapping("/delete/{id}")
+	public String deleteEmployee(@PathVariable Long id)
+	{
+		employeeService.delete(id);
+		
+		return "redirect:/admin/dashboard";
+	}
+	
+	@GetMapping("/edit/{id}")
+	public String editEmployee(@PathVariable Long id)
+	{
+		
+	}
+}

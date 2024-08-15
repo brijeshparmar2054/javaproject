@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Index Page</title>
+<link rel="stylesheet" href="../css/style.css" type="text/css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav>
+		<div class="logo">My Website</div>
+		<ul class="nav-links">
+			<li><a href="/">Home</a></li>
+			<li><a href="/">About</a></li>
+			<li><a href="/">Services</a></li>
+			<li><a href="/">Contact</a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<!--  -->
+	<div class="container" id="dashboard">
+    	<h1>Admin Login</h1>
+        <form action="#" th:action="@{/employee/login}" method="post" id="form">
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+package com.brijesh.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
+import com.brijesh.model.Customer;
+import com.brijesh.service.CustomerService;
+
+@Controller
+public class CustomerController 
+{
+	@Autowired
+	private CustomerService customerService;
+	
+	public String save(Customer customer)
+	{
+		
+	}
+}

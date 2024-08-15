@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Dashboard</title>
+<link rel="stylesheet" th:href="@{../css/style.css}" type="text/css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav>
+		<div class="logo">
+			<h1></h1>
+		</div>
+		
+		<ul class="nav-links">
+			<li><a th:href="@{/}">Home</a></li>
+			<li><a th:href="@{/employee/dashboard}">View Customers</a></li>
+			<li><a th:href="@{/employee/mycustomer}">My Customers</a></li>
+			<li><a th:href="@{/}">Logout</a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	
+	<!-- Content -->
+	<div class="container" id="dashboard">
+    	<h1>Customer List</h1>
+    	<table>
+    		<thead>
+    			<tr>
+	    			<td>Id</td>
+	    			<td>Name</td>
+	    			<td>Email ID</td>
+	    			<td>Phone Number</td>
+	    			<td>Inquiry</td>
+	    			<td>Action</td>
+	    		</tr>
+    		</thead>
+    		<tbody>
+    			<tr th:each="customerlist:${customerlist}">
+    				<td th:text="${customerlist.id}"></td>
+    				<td th:text="${customerlist.name}"></td>
+    				<td th:text="${customerlist.email}"></td>
+    				<td th:text="${customerlist.phone}"></td>
+    				<td th:text="${customerlist.inquiry}"></td>
+    				<td><a th:href="@{accept/{id}(id=${customerlist.id})}">Accept</a></td>
+    			</tr>
+    		</tbody>
+    	</table>
+    </div>
+</body>
+</html>

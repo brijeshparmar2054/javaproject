@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" th:href="@{../css/style.css}" type="text/css">
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<nav>
+		<div class="logo">Admin Dashboard</div>
+		<ul class="nav-links">
+			<li><a th:href="@{/}">Home</a></li>
+			<li><a th:href="@{/admin/addemployee}">Add New Employee</a></li>
+			<li><a th:href="@{/}">Logout</a></li>
+		</ul>
+		<div class="burger">
+			<div class="line1"></div>
+			<div class="line2"></div>
+			<div class="line3"></div>
+		</div>
+	</nav>
+	<div class="container" id="dashboard">
+    	<h1>Employee List</h1>
+    	<table>
+    		<thead>
+    			<tr>
+	    			<td>Id</td>
+	    			<td>Name</td>
+	    			<td>Email ID</td>
+	    			<td>Phone Number</td>
+	    			<td>Action</td>
+	    		</tr>
+    		</thead>
+    		<tbody>
+    			<tr th:each="e:${employeelist}">
+    				<td th:text="${e.id}"></td>
+    				<td th:text="${e.name}"></td>
+    				<td th:text="${e.email}"></td>
+    				<td th:text="${e.phone}"></td>
+    				<td><a th:href="@{edit/{id}(id=${e.id})}">Edit</a> | <a th:href="@{delete/{id}(id=${e.id})}">Delete</a></td>
+    			</tr>
+    		</tbody>
+    		
+    	</table>
+    </div>
+</body>
+</html>

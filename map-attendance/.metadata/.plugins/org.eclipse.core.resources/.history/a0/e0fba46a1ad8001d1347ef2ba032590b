@@ -1,0 +1,11 @@
+package com.briju.login;
+
+import javax.swing.JFrame;
+
+public class Login 
+{
+	public void loginView()
+	{
+		JFrame frame = new JFrame();
+	}
+}
